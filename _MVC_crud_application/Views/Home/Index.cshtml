@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model  List< _MVC_crud_application.DB_Context_EF.employee_1>
+    <table class="table">
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">City</th>
+            <th scope="col">Deparment</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+
+
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.id</td>
+        <td>@item.name</td>
+        <td>@item.email</td>
+        <td>@item.mobile</td>
+        <td>@item.city</td>
+        <td>@item.Department</td>
+        <td><a class="btn btn-success" href="@Url.Action("edit", "Home", new {item.id})">Edit</a></td>
+        <td><a class="btn btn-danger" href="@Url.Action("delete", "Home", new {item.id})">Delete</a></td>
+
+    </tr>
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </table>

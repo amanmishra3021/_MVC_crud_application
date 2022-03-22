@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+@model _MVC_crud_application.Models.employee
+
+@using (Html.BeginForm("About", "Home", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.id);
+    <div class=" form-group">
+
+        <label>NAME</label>
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control", @Required = "Required" })
+
+    </div>
+    <div class=" form-group">
+
+        <label>EMAIL</label>
+        @Html.TextBoxFor(m => m.email, new { @class = "form-control", @Required = "Required" })
+
+    </div>
+    <div class=" form-group">
+
+        <label>MOBILE</label>
+        @Html.TextBoxFor(m => m.mobile, new { @class = "form-control", @Required = "Required" })
+
+    </div>
+    <div class=" form-group">
+
+        <label>CITY</label>
+        @Html.TextBoxFor(m => m.city, new { @class = "form-control", @Required = "Required" })
+
+    </div>
+    <div class=" form-group">
+
+        <label>DEPARTMENT</label>
+        @Html.TextBoxFor(m => m.Deparment, new { @class = "form-control", @Required = "Required" })
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+
+}
